@@ -64,7 +64,24 @@ DML/
 
 ## Quick Start
 
-### 1. Include & Link
+### 1. Link
+
+```cmake
+cmake_minimum_required(VERSION 3.16)
+project(MyGame)
+
+set(CMAKE_CXX_STANDARD 17)
+
+find_package(SDL3 REQUIRED)
+
+add_executable(MyGame main.cpp)
+
+target_include_directories(MyGame PRIVATE path/to/DML/include)
+target_link_directories(MyGame PRIVATE path/to/DML/lib)
+target_link_libraries(MyGame PRIVATE DML SDL3::SDL3)
+```
+
+### 2. Include
 
 ```cpp
 #include <DML/DML.h>
@@ -105,3 +122,5 @@ int main() {
 }
 ```
 
+## Author
+UserAlex546
